@@ -2,7 +2,7 @@
 #
 # Jus de Patate <yaume@ntymail.com>
 # First release :       2019.01.18-01
-               VERSION="2019.01.18-01"
+               VERSION="2019.01.19-01"
 #                       yyyy.mm.dd
 # In-dev version : https://repl.it/@YaumeXen/sherlocksh
 #
@@ -61,14 +61,14 @@ ua="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefo
 
 # FUNCTIONS :
 tests () {
-   if [ "$(curl -s -A "$ua" -I -L https://www.instagram.com/"$1"?hl=en -H 'Origin: https://www.instagram.com' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.81 Safari/537.36' -H 'DNT: 1' | grep "HTTP/2 200")" ]; then echo "IG: yes"; else echo "IG: no"; fi
+   if [ "$(curl -s -A "$ua" -I -L https://www.instagram.com/"$1"?hl=en -H 'Origin: https://www.instagram.com' -H 'DNT: 1' | grep "HTTP/2 200")" ]; then echo "IG: yes"; else echo "IG: no"; fi
    if [ "$(curl -s -A "$ua" -I -L https://www.twitter.com/$1 | grep "HTTP/2 200")" ]; then echo "TWI: yes"; else echo "TWI: no"; fi
    if [ "$(curl -s -A "$ua" -I -L https://facebook.com/$1 | grep "HTTP/2 200")" ]; then echo "FB: yes"; else echo "FB: no"; fi
    if [ ! "$(curl -s -A "$ua" -L https://www.youtube.com/$1 -H 'Origin: https://www.youtube.com' | grep "Not Found")" ]; then echo "YT: yes"; else echo "YT: no"; fi
    if [ "$(curl -s -A "$ua" -I -L https://$1.blogspot.com/ | grep "HTTP/2 200")" ]; then echo "BLOGGER: yes"; else echo "blogger: no"; fi
    if [ "$(curl -s -A "$ua" -I -L https://plus.google.com/+$1 | grep "HTTP/2 200")" ]; then echo "GPLUS: yes"; else echo "GPLUS: no"; fi
    if [ ! "$(curl -s -A "$ua" -L https://www.reddit.com/user/$1 | grep "page not found")" ]; then echo "Reddit: yes"; else echo "Reddit: no"; fi
-   if [ ! "$(curl -s -A "$ua" -I -L https://www.pinterest.com/$1 | grep "https://www.pinterest.com/?show_error=true")" ]; then echo "PT: yes"; else echo "PT: no " fi
+   if [ ! "$(curl -s -A "$ua" -I -L https://www.pinterest.com/$1 | grep "https://www.pinterest.com/?show_error=true")" ]; then echo "PT: yes"; else echo "PT: no"; fi
    if [ "$(curl -s -A "$ua" -I -L https://www.github.com/$1 | grep "HTTP/1.1 200")" ]; then echo "GH: yes"; else echo "GH: no"; fi
    if [ ! "$(curl -s -A "$ua" -I -L https://www.steamcommunity.com/id/$1 | grep "The specified profile could not be found")" ]; then echo "Steam: yes"; else echo "Steam: no"; fi
 }
