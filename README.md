@@ -3,7 +3,7 @@
 
 __Note from Forker (Jus de Patate) :__
 My objective is to make a bash version of sherlock, I'm not a bash pro so pull requests are ok ;)
-My objective is also to add some services like Star Citizen and EVE Online
+[~~My objective is also to add some services like Star Citizen and EVE Online~~](https://github.com/TheYahya/sherlock/pull/123)
 
 (also this screenshot **will** be the output of the final version, but for now it is the one from the original sherlock)
 <p align="center">
